@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery Address and Payment Method</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #8f50ec;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #8f50ec;
+}
+
+button[type="submit"] {
+    width: 100%;
+}
+
+button[type="submit"]:hover {
+    background-color: #8f50ec;
+}
+
+textarea {
+    resize: vertical;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
+}
+
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>Delivery Address</h1>
+        <form id="addressForm">
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="fullname" required>
+
+            <label for="phnno">contact no:</label>
+            <input type="text" id="phnno" name="phnno" required>
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="4" required></textarea>
+            
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" required>
+
+            <label for="country">Country:</label>
+            <input type="text" id="country" name="country" required>     
+            <button type="submit">Submit Address</button>
+        </form>
+        
+        <h1>Payment Method</h1>
+        <form id="paymentForm">
+            <label for="cardname">Name on Card:</label>
+            <input type="text" id="cardname" name="cardname" required>
+            
+            <label for="cardnumber">Card Number:</label>
+            <input type="text" id="cardnumber" name="cardnumber" required>
+            
+            <label for="expiry">Expiration Date:</label>
+            <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required>
+            
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" required>
+            
+            <button type="submit">Submit Payment <a href="success.html">&#8594;</a></button>
+        </form>
+    </div>
+
+    <script>
+        // JavaScript for handling form submissions
+document.getElementById('addressForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    // You can add your logic here to handle the address form submission
+    alert('Address submitted successfully!');
+    // Optionally, you can reset the form after submission
+    this.reset();
+});
+
+document.getElementById('paymentForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    // You can add your logic here to handle the payment form submission
+    alert('Payment submitted successfully!');
+    // Optionally, you can reset the form after submission
+    this.reset();
+});
+    </script>
+</body>
+</html>
